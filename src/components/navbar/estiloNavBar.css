@@ -1,0 +1,15 @@
+.colorNavbar
+{background:#FFFBF5;}
+.estiloLink{
+    color:red;
+    font-family: 'Potta One', cursive;
+}
+.estiloIcono{
+    width: 25%;
+    height: 25%;
+}
+.estiloFlex{
+    display: flex;  
+    flex-direction: row; 
+   justify-content: space-between;
+}
