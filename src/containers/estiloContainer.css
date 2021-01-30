@@ -1,5 +1,14 @@
-.estilo-mensaje{
+body{
+    background-color:#D9FFFB;}
+
+.estilo-tarjeta{
+    width: 18rem;
     text-align: center;
     font-family: 'Yusei Magic', sans-serif;
-    color: #6C8FA3;
+}
+.estilo-imagen{
+width: 80%;
+height: 80%;
+display:block;
+margin:auto;
 }

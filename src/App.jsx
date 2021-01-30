@@ -12,7 +12,9 @@ const App = () => {
   return (
     <>
         <Navbar/>
-        <ItemListContainer greeting ={"Bienvenidos a todos!"}/>
+        <div className="container mt-4">
+        <ItemListContainer/>
+        </div>
     </>
   );
 }
