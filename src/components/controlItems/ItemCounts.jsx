@@ -2,14 +2,17 @@ import React, {useState} from 'react';
 import './estiloItemCounts.css';
 
 
-const ItemCounts = () => {
-  let [control, setControl] = useState(0);
+const ItemCounts = ({inicial,stock,onAdd}) => {
+  let [control, setControl] = useState(1);
   return (
         <>
           <div className="estilo-controles">
-            <button onClick = {()=>{setControl(control=control-1)}} className="btn btn-primary" type="button">-</button>
+            <button disabled={control===inicial} onClick = {()=>{setControl(control=control-1)}} className="btn btn-primary" type="button">-</button>
             <p className="mt-2"> {control} </p>
-            <button onClick = {()=>{setControl(control=control+1)}} className="btn btn-primary" type="button" >+</button>
+            <button disabled={control===stock}  onClick = {()=>{setControl(control=control+1)}} className="btn btn-primary" type="button" >+</button>
+          </div>
+          <div>
+          <button disabled={control===stock} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Agregar al carrito</button>
           </div>
         </>
   );

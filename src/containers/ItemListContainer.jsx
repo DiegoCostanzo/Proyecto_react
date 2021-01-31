@@ -13,7 +13,7 @@ const ItemListContainer = () => {
               <div className="card-body">
                 <h4 className="card-title">Caja trenzada</h4>
                 <p className="card-text">Medidas:32x13x22cm Color:Blanco/Marrón/Negro</p>
-                <ItemCounts/>
+                <ItemCounts inicial={1} stock={5} onAdd={""} />
             </div>
           </div>
 
