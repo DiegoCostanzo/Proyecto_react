@@ -1,10 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCounts from '../components/controlItems/ItemCounts';
-import './estiloContainer.css'
-
+import './estiloContainer.css';
+import productList from "../components/datos/productList";
+import { useEffect, useState } from 'react';
+import ItemList from '../components/itemList/itemList';
 
 
 const ItemListContainer = () => {
+  
+  const [productos,setProductos] = useState([]);
+  
+  useEffect (()=>{
+    const promesa = new Promise((resolve,reject)=>{
+      setTimeout(()=>{resolve(productList)},2000);});
+    promesa.then((resultado)=>setProductos(resultado));
+  },[])
+  
   return (
         <>
            
@@ -15,6 +26,9 @@ const ItemListContainer = () => {
                 <p className="card-text">Medidas:32x13x22cm Color:Blanco/Marrón/Negro</p>
                 <ItemCounts inicial={1} stock={5} onAdd={""} />
             </div>
+          </div>
+          <div>
+            <ItemList propProductos={productos}/>
           </div>
 
         </>
