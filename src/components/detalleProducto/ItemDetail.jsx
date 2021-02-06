@@ -6,14 +6,19 @@ const ItemDetail = ({detail}) => {
     
     return (
     <>
-        <div className="mt-5" >
-        <img src={detail[0].imagen} className="card-img-top estilo-imagen" alt="Imagen del producto caja trenzada"/>
+        <section className="mt-5 grid" >
+            <div>
+                <img src={detail.imagen} className="card-img-top estilo-imagen" alt="Imagen del producto caja trenzada"/>
+                
+            </div> 
             <div className="card-body">
-                <h4 className="card-title">{detail [0].nombre}</h4>
-                <p className="card-text">{detail[0].descripcion}</p>
+                <h2 className="card-title estilo-titulo">{detail.nombre}</h2>
+                <p className="card-text estilo-descripcion">{detail.descripcion}</p>
+                <p className="card-text estilo-precio">${detail.precio}</p>
+                <p className="estilo-detalle">{detail.detalle}</p>
                 <ItemCounts inicial={1} stock={5} onAdd={""} />
             </div>
-        </div>
+        </section>
     </>
     )       
   };

@@ -1,0 +1,21 @@
+.grid {
+    display: grid;  
+	grid-template-columns: 1fr 1fr; 
+	grid-template-rows: 1fr 1fr; 
+ }
+ .estilo-titulo{
+    
+    font-family: 'Potta One', cursive;
+    color: #B39486;
+ }
+ .estilo-descripcion{
+    font-family: 'Yusei Magic', sans-serif;
+ }
+ .estilo-precio{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 2rem;
+ }
+
+ .estilo-detalle{
+    font-family: 'Yusei Magic', sans-serif;
+ }

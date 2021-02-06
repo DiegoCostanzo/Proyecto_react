@@ -1,8 +1,3 @@
-const productDetail = [
-    {id:5,nombre:"Caja de madera",descripcion:"Medidas:16x5x11cm Color:Decorado",precio:350,stock:10,imagen:"/images/caja_madera.jpg"},
-    {id:6,nombre:"Cajon de madera",descripcion:"Medidas:20x30cm Color:Decorado",precio:470,stock:10,imagen:"/images/cajon_madera.jpg"},
-    {id:7,nombre:"Canasta de plástico",descripcion:"Medidas:20x20cm Color:Blanco/Marrón",precio:220,stock:10,imagen:"/images/canasta_plastica_uno.jpg"},
-    {id:8,nombre:"Canasta de plástico",descripcion:"Medidas:24x24cm Color:Blanco/Marrón",precio:250,stock:10,imagen:"/images/canasta_plastica_dos.jpg"},    
-    ];
+const productDetail = {id:5,nombre:"Caja de madera",descripcion:"Medidas:16x5x11cm Color:Decorado",precio:350,stock:10,imagen:"/images/caja_madera.jpg",detalle:"Lorem ipsum dolor sit amet consectetur adipiscing elit, pulvinar faucibus facilisis lacus curae magnis dignissim feugiat, vestibulum non habitasse augue mollis gravida. Lacinia odio viverra nostra habitasse laoreet quisque blandit facilisi, posuere aenean pharetra curabitur lacus maecenas sapien, enim id hac risus lectus praesent mauris. Ad fusce cubilia primis viverra morbi mattis nulla, ut lacus varius habitant congue consequat quisque, auctor vehicula sociis rutrum potenti mauris."};
     
     export default productDetail;
