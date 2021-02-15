@@ -2,14 +2,14 @@ import ItemCounts from '../controlItems/ItemCounts';
 import './estiloItemDetail.css'; 
 
 
+
 const ItemDetail = ({detail}) => {
     
     return (
     <>
         <section className="mt-5 grid" >
             <div>
-                <img src={detail.imagen} className="card-img-top estilo-imagen" alt="Imagen del producto caja trenzada"/>
-                
+                <img src={detail.imagen} className="card-img-top estilo-imagen" alt="Imagen del producto caja trenzada"/>   
             </div> 
             <div className="card-body">
                 <h2 className="card-title estilo-titulo">{detail.nombre}</h2>

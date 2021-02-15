@@ -1,6 +1,7 @@
 import CartWidget from '../icono/CartWidget';
 import './estiloNavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {  NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -13,21 +14,21 @@ const Navbar = () => {
         </button>
       <div className="collapse navbar-collapse estiloFlex" id="navbarTogglerDemo01">
           <div>
-            <img src="/images/Logo.png" className="estiloIcono" alt="Imagen del logo de la página"/>
+            <NavLink to={"/"}><img src="/images/Logo.png" className="estiloIcono" alt="Imagen del logo de la página"/></NavLink>
           </div>
           <div>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link estiloLink " href="./#">Home</a>
+                <NavLink className="nav-link estiloLink" to={"/PaginaPrincipal"}>Home</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link estiloLink" href="./#">E-commerce</a>
+                <NavLink className="nav-link estiloLink" to={"/"}>E-commerce</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link estiloLink" href="./#">Nosotros</a>
+                <NavLink className="nav-link estiloLink" to={"/Nosotros"}>Nosotros</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link estiloLink" href="./#">Contacto</a>
+              <NavLink className="nav-link estiloLink" to={"/Contacto"}>Contacto</NavLink>
               </li>
               <li className="nav-item">
                 <CartWidget/>
