@@ -7,6 +7,7 @@ import ItemDetail from '../components/detalleProducto/ItemDetail';
 
 
 
+
 const ItemDetailContainer = () => {
   
   const [detalleProducto,setDetalleProducto] = useState([]);
@@ -17,6 +18,7 @@ const ItemDetailContainer = () => {
     promesa.then((resultado)=>setDetalleProducto(resultado));
   },[])
   
+ 
   return (
         <>
           <div>

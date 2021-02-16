@@ -20,7 +20,7 @@ const App = () => {
     <BrowserRouter>
         <Navbar/>
           <Switch>
-            <Route exact path="/" className="container mt-4">
+            <Route exact path="/categoria/:categoriaID" className="container mt-4">
               <ItemListContainer/>
             </Route>
             <Route exact path="/detalle/:id">

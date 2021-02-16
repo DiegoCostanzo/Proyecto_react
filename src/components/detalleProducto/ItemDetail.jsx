@@ -1,9 +1,11 @@
+import { useParams } from 'react-router-dom';
 import ItemCounts from '../controlItems/ItemCounts';
 import './estiloItemDetail.css'; 
 
 
 
 const ItemDetail = ({detail}) => {
+    const {id} = useParams();
     
     return (
     <>
@@ -16,6 +18,7 @@ const ItemDetail = ({detail}) => {
                 <p className="card-text estilo-descripcion">{detail.descripcion}</p>
                 <p className="card-text estilo-precio">${detail.precio}</p>
                 <p className="estilo-detalle">{detail.detalle}</p>
+                <p className="estilo-detalle">ID del producto: {id}</p>
                 <ItemCounts inicial={1} stock={5} onAdd={""} />
             </div>
         </section>

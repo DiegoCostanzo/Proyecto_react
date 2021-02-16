@@ -14,7 +14,7 @@ const Navbar = () => {
         </button>
       <div className="collapse navbar-collapse estiloFlex" id="navbarTogglerDemo01">
           <div>
-            <NavLink to={"/"}><img src="/images/Logo.png" className="estiloIcono" alt="Imagen del logo de la página"/></NavLink>
+            <NavLink to={"/categoria/:categoriaID"}><img src="/images/Logo.png" className="estiloIcono" alt="Imagen del logo de la página"/></NavLink>
           </div>
           <div>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -22,7 +22,10 @@ const Navbar = () => {
                 <NavLink className="nav-link estiloLink" to={"/PaginaPrincipal"}>Home</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link estiloLink" to={"/"}>E-commerce</NavLink>
+                <NavLink className="nav-link estiloLink" to={`/categoria/${'Cocina'}`}>Cocina</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link estiloLink" to={`/categoria/${'Adornos'}`}>Adornos</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link estiloLink" to={"/Nosotros"}>Nosotros</NavLink>
