@@ -8,6 +8,8 @@ import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 import PaginaPrincipal from './containers/PaginaPrincipal';
 import Nosotros from './containers/Nosotros';
 import Contacto from './containers/Contacto';
+import Cart from './containers/Cart';
+
 
 
 
@@ -34,6 +36,9 @@ const App = () => {
             </Route>
             <Route exact path="/Contacto">
              <Contacto/>
+            </Route>
+            <Route exact path="/Cart">
+             <Cart></Cart>
             </Route>
         </Switch>
       </BrowserRouter>

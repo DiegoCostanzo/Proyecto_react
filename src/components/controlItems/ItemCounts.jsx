@@ -4,6 +4,14 @@ import './estiloItemCounts.css';
 
 const ItemCounts = ({inicial,stock,onAdd}) => {
   let [control, setControl] = useState(1);
+  
+  const handlerOnAdd = () =>{
+
+    onAdd(control);
+
+  }
+
+
   return (
         <>
           <div className="estilo-controles">
@@ -12,7 +20,7 @@ const ItemCounts = ({inicial,stock,onAdd}) => {
             <button disabled={control===stock}  onClick = {()=>{setControl(control=control+1)}} className="btn btn-primary" type="button" >+</button>
           </div>
           <div>
-          <button disabled={control===stock} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Agregar al carrito</button>
+          <button disabled={control===stock} onClick={handlerOnAdd} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Agregar al carrito</button>
           </div>
         </>
   );
