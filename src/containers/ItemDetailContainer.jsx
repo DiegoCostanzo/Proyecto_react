@@ -3,7 +3,7 @@ import './estiloDetailContainer.css';
 import { useEffect, useState } from 'react';
 import productList from "../components/datos/productList";
 import ItemDetail from '../components/detalleProducto/ItemDetail';
-import {  useParams } from 'react-router-dom';
+import DetailList from '../components/detaillist/detailList';
 
 
 
@@ -11,27 +11,17 @@ import {  useParams } from 'react-router-dom';
 const ItemDetailContainer = () => {
   
   const [detalleProducto,setDetalleProducto] = useState([]);
-  const {id} = useParams();
-  
+
   useEffect (()=>{
     const promesa = new Promise((resolve,reject)=>{
-      setTimeout(()=>{resolve(productList)},2000);});
-    promesa.then(productList.map((Producto)=>{
-      if(Producto.id === id){
-        return (resultado)=>setDetalleProducto(resultado)
-      }else{
-        return null;
-      }
-      
-    }));
- 
-  },[])
-  
+    setTimeout(()=>{resolve(productList)},2000);});
+    promesa.then((resultado)=>{setDetalleProducto(resultado);});  
+  },[]) 
 
   return (
         <>
           <div>
-            <ItemDetail detail ={detalleProducto} /> 
+            <DetailList detail ={detalleProducto}/>
           </div>
           
         </>
