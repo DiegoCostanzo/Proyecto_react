@@ -14,7 +14,7 @@ const ItemDetail = ({detail}) => {
         console.log(control);
         setIrCart(true);
     }
-
+    
     return (
     <>
         <section className="mt-5 grid" >
