@@ -22,12 +22,9 @@ function CartContext ({children}) {
     }
     const removerItem = (detail) =>{
        
-            product.forEach(function(producto, index, object) {
-                if(producto.id === detail.id){
-                 object.splice(index, 2);
-                 console.log(product);
-                }
-            });
+        const newProduct = product.filter(p => p.id !== detail.id);
+        setProduct(newProduct);
+    
     }
     
 
