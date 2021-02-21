@@ -2,19 +2,26 @@ import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ItemCounts from '../controlItems/ItemCounts';
 import './estiloItemDetail.css'; 
-
+import {useContext} from 'react';
+import {cartContext} from '../../contex/CartContext';
 
 
 const ItemDetail = ({detail}) => {
     const {id} = useParams();
 
     const [irCart,setIrCart] = useState(false);
+    
+    const {addCart, product} = useContext(cartContext) 
 
     const onAdd = (control) =>{
-        console.log(control);
+        
         setIrCart(true);
+        addCart([detail,control]);
     }
+
+    console.log(product);
     
+
     return (
     <>
         <section className="mt-5 grid" >

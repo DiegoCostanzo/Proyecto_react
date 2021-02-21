@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './estiloDetailContainer.css';
 import { useEffect, useState } from 'react';
 import productList from "../components/datos/productList";
-import ItemDetail from '../components/detalleProducto/ItemDetail';
 import DetailList from '../components/detaillist/detailList';
 
 

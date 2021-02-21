@@ -8,8 +8,8 @@ import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 import PaginaPrincipal from './containers/PaginaPrincipal';
 import Nosotros from './containers/Nosotros';
 import Contacto from './containers/Contacto';
-import Cart from './containers/Cart';
-
+import Cart from './components/cart/Cart';
+import CartContext from './contex/CartContext';
 
 
 
@@ -19,7 +19,9 @@ import Cart from './containers/Cart';
 const App = () => {
   return (
     <>
+    
     <BrowserRouter>
+      <CartContext>
         <Navbar/>
           <Switch>
             <Route exact path="/categoria/:categoriaID" className="container mt-4">
@@ -41,7 +43,8 @@ const App = () => {
              <Cart></Cart>
             </Route>
         </Switch>
-      </BrowserRouter>
+      </CartContext>
+    </BrowserRouter>
     </>
   );
 }
