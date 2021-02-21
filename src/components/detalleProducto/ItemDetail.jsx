@@ -4,6 +4,7 @@ import ItemCounts from '../controlItems/ItemCounts';
 import './estiloItemDetail.css'; 
 import {useContext} from 'react';
 import {cartContext} from '../../contex/CartContext';
+import { useControlled } from '@material-ui/core';
 
 
 const ItemDetail = ({detail}) => {
@@ -11,13 +12,17 @@ const ItemDetail = ({detail}) => {
 
     const [irCart,setIrCart] = useState(false);
     
-    const {addCart, product} = useContext(cartContext) 
+    const {addCart, product,removerItem} = useContext(cartContext) 
 
     const onAdd = (control) =>{
         
         setIrCart(true);
         addCart([detail,control]);
     }
+    
+    const RemoverItem = () =>{
+        removerItem(detail);
+    } 
 
     console.log(product);
     
@@ -35,7 +40,7 @@ const ItemDetail = ({detail}) => {
                 <p className="estilo-detalle">{detail.detalle}</p>
                 <p className="estilo-detalle">ID del producto: {id}</p>
                 {irCart ? <Link to="/Cart"><button type="button" className="mt-4 btn btn-primary btn-lg btn-block">Terminar mi compra</button></Link> : <ItemCounts inicial={1} stock={5} onAdd={onAdd} />}
-                
+                <button onClick={RemoverItem} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Eliminar Producto</button>
             </div>
         </section>
     </>

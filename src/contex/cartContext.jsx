@@ -1,3 +1,4 @@
+import { useControlled } from '@material-ui/core';
 import React, {createContext} from 'react';
 import {  useState } from 'react';
 
@@ -19,10 +20,20 @@ function CartContext ({children}) {
     const isInCart = (id) =>{ 
         return product.findIndex(prod => prod.id == id)
     }
+    const removerItem = (detail) =>{
+       
+            product.forEach(function(producto, index, object) {
+                if(producto.id === detail.id){
+                 object.splice(index, 2);
+                 console.log(product);
+                }
+            });
+    }
+    
 
     return(
         
-        <cartContext.Provider value={{product,addCart,quantity:product.length}}>
+        <cartContext.Provider value={{product,addCart,removerItem,quantity:product.length}}>
             {children}
         </cartContext.Provider>
 
