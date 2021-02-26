@@ -9,6 +9,7 @@ export const cartContext = createContext()
 
 function CartContext ({children}) {
     const [product,setProduct] = useState([])
+    
     const addCart = (item,quantity) =>{
         if(isInCart(item.id )=== -1){
             setProduct(item)
@@ -27,7 +28,7 @@ function CartContext ({children}) {
     
     }
     
-
+    //console.log(carrito)
     return(
         
         <cartContext.Provider value={{product,addCart,removerItem,quantity:product.length}}>

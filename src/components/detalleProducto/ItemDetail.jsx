@@ -13,17 +13,21 @@ const ItemDetail = ({detail}) => {
     const [irCart,setIrCart] = useState(false);
     
     const {addCart, product,removerItem} = useContext(cartContext) 
-
+    let [carrito,setCarrito] = useState([])
+    
     const onAdd = (control) =>{
         
         setIrCart(true);
         addCart([detail,control]);
+
+        
     }
     
     const RemoverItem = () =>{
         removerItem(detail);
     } 
-
+    carrito =[...carrito,...product]
+    localStorage.setItem("carrito",JSON.stringify(carrito))
     console.log(product);
     
 
