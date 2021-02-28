@@ -1,3 +1,4 @@
+import { useControlled } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './estiloDetailContainer.css';
 import { useEffect, useState } from 'react';

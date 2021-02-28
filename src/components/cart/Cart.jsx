@@ -1,3 +1,4 @@
+import { useControlled } from '@material-ui/core';
 import {useContext} from 'react';
 import {cartContext} from '../../contex/CartContext';
 
@@ -5,7 +6,8 @@ import {cartContext} from '../../contex/CartContext';
 
 const Cart = () => {
   
-  const CartContextUse = useContext(cartContext) 
+  const CartContextUse = useContext(cartContext)
+   
   console.log(CartContextUse);
   return (
         <>
