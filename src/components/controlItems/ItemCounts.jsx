@@ -9,7 +9,7 @@ const ItemCounts = ({inicial,stock,onAdd}) => {
   const handlerOnAdd = () =>{
 
     onAdd(control);
-
+    
   }
 
 

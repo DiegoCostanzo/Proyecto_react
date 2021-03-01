@@ -8,8 +8,9 @@ const Item = ({producto}) => {
     const [irCart,setIrCart] = useState(false);
     
     const onAdd = (control) =>{
-        console.log(control);
         setIrCart(true);
+        console.log(control);
+        
     }
     return (
     <>

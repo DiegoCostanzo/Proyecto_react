@@ -2,3 +2,16 @@
     font-size: 25px;
     margin-top: -10px;
 }
+.dropdown-menu{
+    display: block;
+position:absolute;
+background-color: white;
+min-width: 158px;
+z-index: 1;
+}
+
+.dropdown-menu li:hover{
+    
+    background-color: white;
+    
+    }

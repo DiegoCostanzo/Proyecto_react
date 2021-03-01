@@ -8,11 +8,17 @@ export const cartContext = createContext()
 
 
 function CartContext ({children}) {
-    let [carrito,setCarrito] = useState([])
+    const [carrito,setCarrito] = useState([])
+
     const [product,setProduct] = useState([])
-    const addCart = (item,quantity) =>{
+    
+    const addCart = (detail,quantity) =>{
         //if(isInCart(item.id )=== -1){
-            setProduct(item)
+            //console.log(detail);
+            setProduct(detail,quantity);
+            setCarrito([...carrito,detail]);
+            
+            // 
             
         //}
         //else{
@@ -22,23 +28,24 @@ function CartContext ({children}) {
     //const isInCart = (id) =>{ 
         //return product.findIndex(prod => prod.id == id)
    // }
-    const removerItem = (detail) =>{
+   
+    const removerItem = (detail,quantity) =>{
        
-        const newProduct = product.filter(p => p.id !== detail.id);
-        setProduct(newProduct);
+        const newProduct = carrito.filter(p => p.id !== detail.id);
+        setCarrito(newProduct);
+        console.log(newProduct)
     
     }
     useEffect (()=>{
-        console.log("hola")
-        setCarrito([...carrito,product]); 
-        localStorage.setItem("carrito",JSON.stringify(carrito))
-         
-      },[product])
+        console.log(product);
+        console.log(carrito);
+        localStorage.setItem("carrito",JSON.stringify(carrito));
+      },[carrito])
    
     
     return(
         
-        <cartContext.Provider value={{product,addCart,removerItem,quantity:product.length}}>
+        <cartContext.Provider value={{carrito,product,addCart,removerItem,quantity:product.length}}>
             {children}
         </cartContext.Provider>
 

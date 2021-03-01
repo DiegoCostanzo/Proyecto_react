@@ -9,27 +9,15 @@ import { useControlled } from '@material-ui/core';
 
 const ItemDetail = ({detail}) => {
     const {id} = useParams();
-
     const [irCart,setIrCart] = useState(false);
-    
     const {addCart, product,removerItem} = useContext(cartContext) 
-    
-    
-    const onAdd = (control) =>{
-        
+    const onAdd = (control) =>{   
         setIrCart(true);
-        addCart([detail,control]);
-
-        
+        addCart(detail,control);    
     }
-    
     const RemoverItem = () =>{
         removerItem(detail);
     } 
-    
-    
-    
-
     return (
     <>
         <section className="mt-5 grid" >
