@@ -13,10 +13,11 @@ const ItemDetail = ({detail}) => {
     const {addCart, product,removerItem} = useContext(cartContext) 
     const onAdd = (control) =>{   
         setIrCart(true);
-        addCart(detail,control);    
+        addCart([detail,control]);    
     }
     const RemoverItem = () =>{
         removerItem(detail);
+        
     } 
     return (
     <>

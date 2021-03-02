@@ -3,21 +3,26 @@ import { FaShoppingCart } from "react-icons/fa";
 import './estiloCartWidget.css';
 import {useContext} from 'react';
 import {cartContext} from '../../contex/CartContext';
-import {  useState } from 'react';
+import {  useState,useEffect } from 'react';
 import CarritoDesplegable from '../carritoDesplegable/CarritoDesplegable';
+import { useControlled } from '@material-ui/core';
 
 const CartWidget = () => {
   const CartContextUse = useContext(cartContext)
-  const {carrito} = useContext(cartContext)
-  let [cantidadCarrito,setCantidadCarrito] = useState(0)
-  cantidadCarrito = carrito.length
+  const {carrito,cantidadFinal} = useContext(cartContext)
+  let [cantidad,setCantidad] = useState([])
+  
+  let total = cantidadFinal.reduce((a, b) => a + b, 0);
+  console.log(total);
+  
+  
   
   return (
         <>
             <div className="nav-link estilo-icono">
               
-              {cantidadCarrito ==0?<span></span>:<span className="pt-5" display="none"><FaShoppingCart/>{cantidadCarrito}</span>}
-              
+              <FaShoppingCart/>
+              {total}
             </div>
         </>
   );

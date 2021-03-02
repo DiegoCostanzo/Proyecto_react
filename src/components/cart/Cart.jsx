@@ -10,19 +10,18 @@ const Cart = () => {
   const CartContextUse = useContext(cartContext)
   const {carrito} = useContext(cartContext)
   let [precioFinal,setPrecioFinal] = useState(0)
-  console.log(carrito==[])
+  
   return (
         <>
           <div > 
             <h1>Cart</h1>
               {carrito.map((Producto)=>{
-              precioFinal = (Producto.precio) + precioFinal
-              console.log(precioFinal)
+              precioFinal = (Producto[0].precio*Producto[1]) + precioFinal
               return <table>
               <tbody>
               <tr className="pr-5">   
-              <td className="pr-5"><p>{Producto.nombre}</p></td>
-              <td><p>{Producto.precio}</p></td>
+              <td className="pr-5"><p>{Producto[0].nombre}</p></td>
+              <td><p>{Producto[0].precio*Producto[1]}</p></td>
               </tr>
               </tbody>
               
