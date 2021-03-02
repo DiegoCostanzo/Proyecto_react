@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 import '@firebase/firestore';
 
 
@@ -13,11 +13,11 @@ import '@firebase/firestore';
     measurementId: "G-TRMGQ4MPSR"
   });
 
- export const getFirebase = () => {
+ export function getFirebase () {
      return app;
  }
 
- export const getFirestore = () => {
+ export function getFirestore () {
     return firebase.firestore(app);
 }
 

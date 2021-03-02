@@ -10,7 +10,7 @@ const DetailList = ({detail}) => {
   <>
   <div > 
       {detail.map((Producto)=>{
-        if(Producto.id == id){
+        if(Producto.categoriaID == id){
         return  <ItemDetail key={Producto.id} detail={Producto}/>;  
         }else{
           return null;

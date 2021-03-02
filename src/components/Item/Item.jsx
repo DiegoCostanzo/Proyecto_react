@@ -19,7 +19,7 @@ const Item = ({producto}) => {
             <div className="card-body">
                 <h4 className="card-title">{producto.nombre}</h4>
                 <p className="card-text">{producto.descripcion}</p>
-                <p><Link to={`/detalle/${producto.id}`}>Detalles</Link></p>
+                <p><Link to={`/detalle/${producto.categoriaID}`}>Detalles</Link></p>
                 <ItemCounts inicial={1} stock={5} onAdd={onAdd}/>
             </div>
         </div>

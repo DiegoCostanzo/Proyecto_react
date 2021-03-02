@@ -20,7 +20,6 @@ const CartWidget = () => {
   return (
         <>
             <div className="nav-link estilo-icono">
-              
               <FaShoppingCart/>
               {total}
             </div>
