@@ -4,27 +4,17 @@ import productList from "../components/datos/productList";
 import { useEffect, useState } from 'react';
 import ItemList from '../components/itemList/itemList';
 import { getFirestore } from '../firebase';
-
+import {useContext} from 'react';
+import {cartContext} from '../../src/contex/CartContext';
 
 
 
 
 const ItemListContainer = () => {
   
-  const [productos,setProductos] = useState([]);
+  const CartContextUse = useContext(cartContext)
+  const {productos} = useContext(cartContext)
   
-  useEffect (()=>{
-    const baseDeDatos= getFirestore();
-    const itemCollection= baseDeDatos.collection("Productos");
-    itemCollection.get().then((value) => {
-      let aux = value.docs.map(element =>
-        {return {...element.data()}})
-      
-        setProductos(aux);
-        
-      })
-    
-  },[])
   
   return (
         <>

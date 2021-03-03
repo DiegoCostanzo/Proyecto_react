@@ -1,6 +1,7 @@
 import { useControlled } from '@material-ui/core';
 import React, {createContext} from 'react';
 import {  useState,useEffect } from 'react';
+import { getFirestore } from '../firebase';
 
 
 export const cartContext = createContext()
@@ -16,6 +17,7 @@ function CartContext ({children}) {
     let [cantidadFinal,setCantidadFinal] = useState([])
     let [productosCantidad,setProductosCantidad] = useState([])
     let [total,setTotal] = useState(0)
+    const [productos,setProductos] = useState([]);
     const addCart = (detail,quantity) =>{
         //if(isInCart(item.id )=== -1){
             //console.log(detail);
@@ -54,11 +56,25 @@ function CartContext ({children}) {
         
         localStorage.setItem("carrito",JSON.stringify(carrito));
       },[carrito])
+      
+      useEffect (()=>{
+        const baseDeDatos= getFirestore();
+        const itemCollection= baseDeDatos.collection("Productos");
+        itemCollection.get().then((value) => {
+          let aux = value.docs.map(element =>
+            {return {...element.data(),id:element.id}})
+          
+            setProductos(aux);
+            
+          })
+          
+      },[])
+      console.log(productos)
    
     
     return(
         
-        <cartContext.Provider value={{total,cantidadFinal,carrito,product,addCart,removerItem,quantity:product.length}}>
+        <cartContext.Provider value={{productos,total,cantidadFinal,carrito,product,addCart,removerItem,quantity:product.length}}>
             {children}
         </cartContext.Provider>
 
