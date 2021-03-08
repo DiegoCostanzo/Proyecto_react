@@ -3,14 +3,30 @@ import {useContext} from 'react';
 import {cartContext} from '../../contex/CartContext';
 import {  useState } from 'react';
 import {  Link } from 'react-router-dom';
-
+import { getFirestore } from '../../firebase';
 
 const Cart = () => {
-  
+  const[name,setName]=useState("");
+  const[mail,setMail]=useState("");
+  const[telefono,setTelefono]=useState("");
+  const[idOrden,setIdOrden]=useState("");
   const CartContextUse = useContext(cartContext)
   const {carrito} = useContext(cartContext)
   let [precioFinal,setPrecioFinal] = useState(0)
   
+  const finalizarCompra = ()=>{
+    let nuevaOrden = {buyer:{name:name,mail:mail,telefono:telefono},items: {...carrito},total:precioFinal};
+    const baseDeDatos= getFirestore();
+    const ordenesCollection= baseDeDatos.collection("ordenes");
+    ordenesCollection.add(nuevaOrden).then((value)=>{
+      console.log(value.id)
+      setIdOrden(value.id)
+    })
+    console.log(nuevaOrden)
+  }
+
+    
+
   return (
         <>
           <div > 
@@ -30,6 +46,16 @@ const Cart = () => {
               ,<p>{precioFinal}</p>)}   
           </div>
           {carrito ==0 ? <p>No hay productos en el carrito <Link to={`/categoria/${'Cocina'}`}><button>Ir a tienda</button></Link></p>:<p>{precioFinal}</p>}
+          <div>
+            <input type="text" placeholder="Ingrese su nombre" onChange={(e)=>{setName(e.target.value)}}/>
+            <br/>
+            <input type="text" placeholder="Ingrese su mail" onChange={(e)=>{setMail(e.target.value)}}/>
+            <br/>
+            <input type="text" placeholder="Ingrese su telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
+            <br/>
+            <button onClick={()=>{finalizarCompra()}}>Finalizar compra</button>
+            <p>Su numero de orden de compra es: <h2>{idOrden}</h2></p>
+          </div>
         </>
   );
 }
