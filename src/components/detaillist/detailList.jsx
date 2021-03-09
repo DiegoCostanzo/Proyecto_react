@@ -15,6 +15,7 @@ const DetailList = ({detail}) => {
         }else{
           return null;
         }
+        
       })}
   </div>
   </>

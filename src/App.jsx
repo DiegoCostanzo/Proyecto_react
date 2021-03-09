@@ -10,6 +10,7 @@ import Nosotros from './containers/Nosotros';
 import Contacto from './containers/Contacto';
 import Cart from './components/cart/Cart';
 import CartContext from './contex/CartContext';
+import Home from './containers/home';
 
 
 
@@ -41,6 +42,9 @@ const App = () => {
             </Route>
             <Route exact path="/Cart">
              <Cart></Cart>
+            </Route>
+            <Route exact path="/">
+             <Home></Home>
             </Route>
         </Switch>
       </CartContext>

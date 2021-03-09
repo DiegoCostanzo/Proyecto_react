@@ -8,6 +8,7 @@ import { getFirestore } from '../../firebase';
 const Cart = () => {
   const[name,setName]=useState("");
   const[mail,setMail]=useState("");
+  const[mail2,setMail2]=useState("");
   const[telefono,setTelefono]=useState("");
   const[idOrden,setIdOrden]=useState("");
   const CartContextUse = useContext(cartContext)
@@ -24,7 +25,7 @@ const Cart = () => {
     })
     console.log(nuevaOrden)
   }
-
+  console.log(mail2)
     
 
   return (
@@ -51,9 +52,12 @@ const Cart = () => {
             <br/>
             <input type="text" placeholder="Ingrese su mail" onChange={(e)=>{setMail(e.target.value)}}/>
             <br/>
+            <input type="text" placeholder="Confirme su mail" onChange={(e)=>{setMail2(e.target.value)}}/>
+            <br/>
             <input type="text" placeholder="Ingrese su telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
             <br/>
-            <button onClick={()=>{finalizarCompra()}}>Finalizar compra</button>
+            {mail!==mail2 ? <p>Los emails ingresados no son iguales</p> : <p></p> }
+            <button disabled={mail!==mail2} onClick={()=>{finalizarCompra()}}>Finalizar compra</button>
             <p>Su numero de orden de compra es: <h2>{idOrden}</h2></p>
           </div>
         </>
