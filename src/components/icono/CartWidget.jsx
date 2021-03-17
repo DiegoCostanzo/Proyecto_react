@@ -11,9 +11,12 @@ const CartWidget = () => {
   const CartContextUse = useContext(cartContext)
   const {carrito,cantidadFinal} = useContext(cartContext)
   let [cantidad,setCantidad] = useState([])
-  
-  let total = cantidadFinal.reduce((a, b) => a + b, 0);
-  console.log(total);
+  let total = 0;
+  //let total = cantidadFinal.reduce((a, b) => a.detail + b.detail , 0 );
+  cantidadFinal.forEach((a)=>{
+     total = total +  a.detail;
+   return total})
+  //console.log("total",total);
   
   
   

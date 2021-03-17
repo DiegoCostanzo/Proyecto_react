@@ -15,10 +15,7 @@ const ItemDetail = ({detail}) => {
         setIrCart(true);
         addCart([detail,control]);    
     }
-    const RemoverItem = () =>{
-        removerItem(detail);
-        
-    } 
+  
     return (
     <>
         <section className="mt-5 grid" >
@@ -32,7 +29,7 @@ const ItemDetail = ({detail}) => {
                 <p className="estilo-detalle">{detail.detalle}</p>
                 <p className="estilo-detalle">ID del producto: {id}</p>
                 {irCart ? <Link to="/Cart"><button type="button" className="mt-4 btn btn-primary btn-lg btn-block">Terminar mi compra</button></Link> : <ItemCounts inicial={1} stock={5} onAdd={onAdd} />}
-                <button onClick={RemoverItem} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Eliminar Producto</button>
+                
             </div>
         </section>
     </>

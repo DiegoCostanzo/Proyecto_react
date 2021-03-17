@@ -25,9 +25,9 @@ function CartContext ({children}) {
             setProduct(detail,quantity);
             setCarrito([...carrito,detail]);
             setCantidadCarrito(detail[1])
-            cantidadFinal.push(detail[1]);
+            cantidadFinal.push({detail:detail[1],id:detail[0].id});
             
-            
+            console.log("Cantidad",cantidadFinal)
             
             
            
@@ -46,11 +46,12 @@ function CartContext ({children}) {
    // }
    
     const removerItem = (detail) =>{
-       
+        
         const newProduct = carrito.filter(p => p[0].id !== detail.id);
         setCarrito(newProduct);
-        
-    
+        const newCantidad = cantidadFinal.filter(p => p.id !== detail.id);
+        setCantidadFinal(newCantidad);
+        console.log("Cantidad",cantidadFinal)
     }
     useEffect (()=>{
         

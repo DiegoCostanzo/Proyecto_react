@@ -3,3 +3,149 @@ text-align: center;
 font-family: 'Yusei Magic', sans-serif;
 
 }
+
+.imagen_principal{
+    width: 100%;
+    height:600px;
+}
+.estilo-letra-card{
+    font-family: 'Yusei Magic', sans-serif;  
+}
+
+.estilo-parrafo-principal{
+    
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h5
+{
+  margin:0px;
+  font-size:1.4em;
+  font-weight:700;
+}
+
+p
+{
+  font-size:12px;
+}
+
+
+
+/* End Non-Essential  */
+
+.property-card
+{
+  height:18em;
+  width:14em;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+  
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.imagen1{
+    background-image:url('https://image.freepik.com/vector-gratis/conjunto-elementos-libros-escolares_1284-34322.jpg');
+}
+.imagen2{
+    background-image:url('https://image.freepik.com/vector-gratis/linea-decorativa-conjunto-carteles-arte-flores-hojas_1017-30504.jpg');
+}
+.imagen3{
+    background-image:url('https://image.freepik.com/vector-gratis/lindos-juguetes-ninos-estan-estantes-parte-interior-habitacion-infantil-o-jugueteria-aislado-fondo-blanco_321061-246.jpg');
+}
+.imagen4{
+    background-image:url('https://image.freepik.com/vector-gratis/ilustracion-mercado-pulgas-dibujado-mano-plana-personas_23-2148829660.jpg');
+}
+.imagen5{
+    background-image:url('https://image.freepik.com/psd-gratis/diseno-mock-up-cuadro_1315-6.jpg');
+}
+
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:12em;
+  width:14em;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:18em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+
+
