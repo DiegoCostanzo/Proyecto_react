@@ -5,7 +5,8 @@ const HomeList = ({propProductos}) => {
    
     return (
     <>
-       <div>
+       
+       <div className="container grid1">
        {propProductos.map((Producto)=>{
         return <Item key={Producto.id} producto={Producto}/>;
       })} 

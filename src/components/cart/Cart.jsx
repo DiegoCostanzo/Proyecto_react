@@ -4,6 +4,8 @@ import {cartContext} from '../../contex/CartContext';
 import {  useState } from 'react';
 import {  Link } from 'react-router-dom';
 import { getFirestore } from '../../firebase';
+import '../cart/Cart.css';
+import {  NavLink } from 'react-router-dom';
 
 const Cart = () => {
   const[name,setName]=useState("");
@@ -26,43 +28,38 @@ const Cart = () => {
     console.log(nuevaOrden)
   }
   console.log(mail2)
-    
-
+  
   return (
         <>
-          <div > 
-            <h1>Cart</h1>
-              {carrito.map((Producto)=>{
-              precioFinal = (Producto[0].precio*Producto[1]) + precioFinal
-              return <table>
-              <tbody>
-              <tr className="pr-5">   
-              <td className="pr-5"><p>{Producto[0].nombre}</p></td>
-              <td><p>{Producto[0].precio*Producto[1]}</p></td>
-              </tr>
-              </tbody>
-              
-              </table>  
-              }
-              ,<p>{precioFinal}</p>)}   
-          </div>
-          {carrito ==0 ? <p>No hay productos en el carrito <Link to={`/categoria/${'Cocina'}`}><button>Ir a tienda</button></Link></p>:<p>{precioFinal}</p>}
-          <div>
-            <input type="text" placeholder="Ingrese su nombre" onChange={(e)=>{setName(e.target.value)}}/>
-            <br/>
-            <input type="text" placeholder="Ingrese su mail" onChange={(e)=>{setMail(e.target.value)}}/>
-            <br/>
-            <input type="text" placeholder="Confirme su mail" onChange={(e)=>{setMail2(e.target.value)}}/>
-            <br/>
-            <input type="text" placeholder="Ingrese su telefono" onChange={(e)=>{setTelefono(e.target.value)}}/>
-            <br/>
-            {mail!==mail2 ? <p>Los emails ingresados no son iguales</p> : <p></p> }
-            <button disabled={mail!==mail2} onClick={()=>{finalizarCompra()}}>Finalizar compra</button>
-            <p>Su numero de orden de compra es: <h2>{idOrden}</h2></p>
-          </div>
+          <div className="container">
+              <h1 className="titulo-cart">Cart</h1> 
+                <table className="table  table-striped">
+                  <thead>
+                  <tr className="pl-5">
+                    <th scope="col" className="texto-columna-titulo">Producto</th>
+                    <th scope="col" className="texto-columna-titulo">Descripcion</th>
+                    <th scope="col" className="texto-columna-titulo">Cantidad</th>
+                    <th scope="col" className="texto-columna-titulo">Precio</th>
+                  </tr>
+                  </thead>
+                  <tbody> 
+                  {carrito.map((Producto)=>{
+                  
+                  precioFinal = (Producto[0].precio*Producto[1]) + precioFinal
+                    return <tr className="">
+                              <td className="imagen-cart align-middle"><img src={Producto[0].imagen} className="card-img-top" alt="Imagen del producto caja trenzada" width="100" height="120"/></td>   
+                              <td className="align-middle texto-columna-texto"><p>{Producto[0].nombre}</p></td>
+                              <td className="align-middle texto-columna-texto"><p>{Producto[1]}</p></td>
+                              <td className="align-middle texto-columna-texto"><p>${Producto[0].precio*Producto[1]}</p></td>
+                            </tr>    
+                            })}    
+                </tbody>
+                </table>
+            </div>
+          {carrito ==0 ? <div className="estilo-no-productos"><div><p className="estilo-parrafo-cart">No hay productos en el carrito</p></div><div> <Link to={`/`}><button className="btn btn-outline-dark btn-lg btn btn-light">Ir a tienda</button></Link></div></div>:<div className="estilo-final-tabla"><div><Link to={`/Pago`} ><button className=" btn btn-outline-dark btn-lg btn btn-light boton-cart">Realizar Compra</button></Link></div><div> <p className="estilo-precio-final ">Total a pagar:<strong>${precioFinal}</strong></p></div></div>}
+        
         </>
   );
 }
-
 export default Cart;
 

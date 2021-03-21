@@ -24,12 +24,11 @@ const ItemDetail = ({detail}) => {
             </div> 
             <div className="card-body">
                 <h2 className="card-title estilo-titulo">{detail.nombre}</h2>
-                <p className="card-text estilo-descripcion">{detail.descripcion}</p>
-                <p className="card-text estilo-precio">${detail.precio}</p>
-                <p className="estilo-detalle">{detail.detalle}</p>
-                <p className="estilo-detalle">ID del producto: {id}</p>
-                {irCart ? <Link to="/Cart"><button type="button" className="mt-4 btn btn-primary btn-lg btn-block">Terminar mi compra</button></Link> : <ItemCounts inicial={1} stock={5} onAdd={onAdd} />}
-                
+                <p className="card-text estilo-descripcion"><strong>Detalle:</strong>{detail.descripcion}</p>
+                <p className="card-text estilo-descripcion "><strong>Precio:</strong> <strong className="estilo-precio">${detail.precio}</strong></p>
+                <p className="estilo-detalle"><strong>Descripcion:</strong>{detail.detalle}</p>
+                <p className="estilo-detalle"><strong>ID del producto:</strong> {id}</p>
+                {irCart ? <Link to="/Cart" className="estilo-link"><button type="button" className="mt-4 btn btn-outline-dark btn-lg btn btn-light btn-block">Terminar mi compra</button></Link> : <ItemCounts inicial={1} stock={5} onAdd={onAdd} />}
             </div>
         </section>
     </>

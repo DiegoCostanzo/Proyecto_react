@@ -1,0 +1,42 @@
+.titulo-cart{
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;  
+}
+
+.imagen-cart{
+    width: 150px;
+    height: 70px;
+}
+.texto-columna-titulo{
+    text-align: center;
+}
+.texto-columna-texto{
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+}
+.estilo-precio-final{
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 20px;
+    margin-right: 100px;
+
+}
+.estilo-no-productos{
+    font-family: 'Yusei Magic', sans-serif;
+    display: flex;
+    flex-direction: column; 
+    width: 100vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+.estilo-final-tabla{
+    display: flex;  flex-direction: row; 
+    justify-content: space-between;
+}
+.boton-cart{
+    margin-left: 100px;
+}
+.estilo-parrafo-cart{
+font-size: 1.4rem;
+}

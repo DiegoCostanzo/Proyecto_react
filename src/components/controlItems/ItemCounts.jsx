@@ -16,12 +16,12 @@ const ItemCounts = ({inicial,stock,onAdd}) => {
   return (
         <>
           <div className="estilo-controles">
-            <button disabled={control===inicial} onClick = {()=>{setControl(control=control-1)}} className="btn btn-primary" type="button">-</button>
+            <button disabled={control===inicial} onClick = {()=>{setControl(control=control-1)}} className="btn btn-outline-dark btn-lg btn btn-light" type="button">-</button>
             <p className="mt-2"> {control} </p>
-            <button disabled={control===stock}  onClick = {()=>{setControl(control=control+1)}} className="btn btn-primary" type="button" >+</button>
+            <button disabled={control===stock}  onClick = {()=>{setControl(control=control+1)}} className="btn btn-outline-dark btn-lg btn btn-light " type="button" >+</button>
           </div>
           <div>
-          <button disabled={control===stock} onClick={handlerOnAdd} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Agregar al carrito</button>
+          <button disabled={control===stock} onClick={handlerOnAdd} type="button" className="mt-4 btn btn-outline-dark btn-lg btn btn-light btn-block">Agregar al carrito</button>
           </div>
         </>
   );

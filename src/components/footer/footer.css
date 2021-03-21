@@ -1,0 +1,15 @@
+.footer{
+    background:#FFF6F2;
+    font-family: 'Potta One', cursive;
+   
+}
+.lista-footer{
+    list-style:none;  
+}
+.estilo-titulo-footer{
+    text-align: center;
+}
+.estilo-contacto-footer{
+    color: #808080;
+    margin-top: 10px;
+}

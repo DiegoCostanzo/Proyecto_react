@@ -13,7 +13,7 @@ const Home = () => {
     <>
        <div>
             <HomeList propProductos={productos}/>
-      </div>
+       </div>
     </>
     )       
   };

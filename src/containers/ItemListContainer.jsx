@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './estiloContainer.css';
-import productList from "../components/datos/productList";
 import { useEffect, useState } from 'react';
 import ItemList from '../components/itemList/itemList';
 import { getFirestore } from '../firebase';
@@ -18,9 +17,9 @@ const ItemListContainer = () => {
   
   return (
         <>
-          <div>
+          <section>
             <ItemList propProductos={productos}/>
-          </div>
+          </section>
         </>
   );
 }

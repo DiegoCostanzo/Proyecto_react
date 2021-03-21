@@ -9,15 +9,15 @@ const ItemList = ({propProductos}) => {
   
   return (
   <>
-  <div > 
-      {propProductos.map((Producto)=>{
+    <div className="grid1 container">
+    {propProductos.map((Producto)=>{
         if(Producto.categoria === categoriaID){
         return <Item key={Producto.id} producto={Producto}/>;
         }else{
           return null;
         }
       })}
-  </div>
+    </div>
   </>
   )       
 };

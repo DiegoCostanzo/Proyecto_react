@@ -3,7 +3,93 @@ text-align: center;
 font-family: 'Yusei Magic', sans-serif;
 
 }
-
+.estilo-formulario{
+  font-family: 'Yusei Magic', sans-serif;
+}
+.centrado-formulario{
+  display: flex;
+  align-items: center; 
+  
+}
+.texto-nosotros{
+  text-align: center;
+  font-family: 'Yusei Magic', sans-serif;
+  font-size:25px;
+}
+.estilo-contacto-mapa{
+  display: flex;  
+  flex-direction: row; 
+   justify-content: center;
+}
+.estilo-contacto-lista{
+  list-style:none;
+  font-family: 'Yusei Magic', sans-serif;
+  display: flex;     
+  flex-direction: column; 
+  justify-content: space-between;
+  height: 200px;
+}
+.titulo-conctaco-mapa{
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 25px; 
+  text-align: center;
+}
+.icono-contactos{
+  display: inline-block;
+}
+.tamaño-icono{
+  font-size: 25px;
+}
+.estilo-mapa{
+  border:hidden 5px #75b3ac;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright:15px;
+-moz-border-radius-bottomleft:15px;
+-moz-border-radius-bottomright:15px;
+-webkit-border-top-left-radius:15px;
+-webkit-border-top-right-radius:15px;
+-webkit-border-bottom-left-radius:15px;
+-webkit-border-bottom-right-radius:15px;
+border-top-left-radius:15px;
+border-top-right-radius:15px;
+border-bottom-left-radius:15px;
+border-bottom-right-radius:15px;
+}
+.estilo-imagen-nosotros{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  width: 50%;
+  border:none 5px #000000;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright:5px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-top-right-radius:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+}
+form{
+  border:double 5px #74b3ac;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright:5px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-top-left-radius:6px;
+  -webkit-border-top-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-top-left-radius:6px;
+  border-top-right-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+}
 .imagen_principal{
     width: 100%;
     height:600px;
@@ -147,5 +233,14 @@ p
   background-color:blue;
   cursor:pointer;
 }
+.estilo-box-card{
+  width: 250px;
+}
+.flex-principal{
+  display: flex;  
+  flex-direction: row; 
+  justify-content: space-between;
+}
+
 
 

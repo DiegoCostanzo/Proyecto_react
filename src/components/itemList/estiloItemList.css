@@ -1,4 +1,7 @@
-.flex{
-    display: flex;  flex-direction: row; 
-    justify-content: space-around;
+.grid1{
+    display: grid;  
+	grid-template-columns: 1fr 1fr 1fr; 
+	grid-template-rows: 700px;
+    align-items: center;
+
 }

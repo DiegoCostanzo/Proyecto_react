@@ -11,6 +11,8 @@ import Contacto from './containers/Contacto';
 import Cart from './components/cart/Cart';
 import CartContext from './contex/CartContext';
 import Home from './containers/home';
+import Pago from './components/pago/Pago';
+import Footer from './components/footer/Footer';
 
 
 
@@ -41,12 +43,16 @@ const App = () => {
              <Contacto/>
             </Route>
             <Route exact path="/Cart">
-             <Cart></Cart>
+             <Cart/>
+            </Route>
+            <Route exact path="/Pago">
+             <Pago/>
             </Route>
             <Route exact path="/">
-             <Home></Home>
+             <Home/>
             </Route>
         </Switch>
+        <Footer/>
       </CartContext>
     </BrowserRouter>
     </>

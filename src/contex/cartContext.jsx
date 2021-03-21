@@ -28,12 +28,7 @@ function CartContext ({children}) {
             cantidadFinal.push({detail:detail[1],id:detail[0].id});
             
             console.log("Cantidad",cantidadFinal)
-            
-            
-           
-    
-
-            
+                      
             // 
             
         //}

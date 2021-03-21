@@ -1,8 +1,6 @@
 import { useControlled } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './estiloDetailContainer.css';
 import { useEffect, useState } from 'react';
-import productList from "../components/datos/productList";
 import DetailList from '../components/detaillist/detailList';
 import { getFirestore } from '../firebase';
 import { useParams } from "react-router-dom";

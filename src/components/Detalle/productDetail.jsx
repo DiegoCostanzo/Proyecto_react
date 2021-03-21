@@ -1,3 +1,0 @@
-const productDetail = {id:5,nombre:"Caja de madera",descripcion:"Medidas:16x5x11cm Color:Decorado",precio:350,stock:10,imagen:"/images/caja_madera.jpg",detalle:"Lorem ipsum dolor sit amet consectetur adipiscing elit, pulvinar faucibus facilisis lacus curae magnis dignissim feugiat, vestibulum non habitasse augue mollis gravida. Lacinia odio viverra nostra habitasse laoreet quisque blandit facilisi, posuere aenean pharetra curabitur lacus maecenas sapien, enim id hac risus lectus praesent mauris. Ad fusce cubilia primis viverra morbi mattis nulla, ut lacus varius habitant congue consequat quisque, auctor vehicula sociis rutrum potenti mauris."};
-    
-    export default productDetail;

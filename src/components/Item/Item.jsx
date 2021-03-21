@@ -23,9 +23,9 @@ const Item = ({producto}) => {
             <div className="card-body">
                 <h4 className="card-title">{producto.nombre}</h4>
                 <p className="card-text">{producto.descripcion}</p>
-                <p><Link to={`/detalle/${producto.id}`}>Detalles</Link></p>
+                <Link to={`/detalle/${producto.id}`} ><p className="estiloLink">Detalles</p></Link>
                 <ItemCounts inicial={1} stock={5} onAdd={onAdd}/>
-                <button onClick={RemoverItem} type="button" className="mt-4 btn btn-primary btn-lg btn-block">Eliminar Producto</button>
+                <button onClick={RemoverItem} type="button" className="mt-4 btn btn-outline-dark btn-lg btn btn-light btn-block">Eliminar Producto</button>
             </div>
         </div>
     </>
